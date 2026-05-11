@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upstate SC Young Birders</title>
+
+  <style>
+    :root {
+      --forest: #254734;
+      --moss: #6f8f72;
+      --sage: #dfe8d8;
+      --cream: #f7f3ea;
+      --teal: #5d8fb3;
+      --water: #d7e9f1;
+      --clay: #b46f43;
+      --ink: #1f2a24;
+      --paper: #fffdf9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .7rem 6vw;
+      background: rgba(247, 243, 234, .92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(37, 71, 52, .12);
+    }
+
+    .logo img {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
+    nav a {
+      color: var(--forest);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-family: Arial, sans-serif;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(215,233,241,.12), rgba(37,71,52,.48)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2000&auto=format&fit=crop") center/cover;
+      display: flex;
+      align-items: end;
+      padding: 8rem 8vw 5rem;
+    }
+
+    .hero {
+      max-width: 600px;
+      background: rgba(255,253,249,.84);
+      padding: 2rem;
+      border-radius: 1.3rem;
+    }
+
+    h1 {
+      color: var(--forest);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin-bottom: .75rem;
+    }
+
+    h2 {
+      color: var(--forest);
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: var(--forest);
+      font-weight: 400;
+      margin-bottom: .5rem;
+    }
+
+    p { font-size: 1rem; }
+
+    .button {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: rgba(93,143,179,.08);
+      color: var(--forest);
+      border: 1px solid rgba(93,143,179,.38);
+      padding: .78rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    section { padding: 4.5rem 8vw; }
+
+    .small-label {
+      font-family: Arial, sans-serif;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      margin-bottom: .75rem;
+    }
+
+    .intro,
+    .poster {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .intro img,
+    .poster img {
+      width: 100%;
+      border-radius: 1.1rem;
+      display: block;
+    }
+
+    .soft { background: var(--sage); }
+
+    .simple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .note {
+      background: rgba(255,255,255,.7);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(37,71,52,.1);
+    }
+
+    .poster { background: var(--paper); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: .8rem;
+      margin-top: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: .9rem;
+    }
+
+    .gallery img:first-child {
+      height: 535px;
+      grid-row: span 2;
+    }
+
+    .join {
+      text-align: center;
+      background:
+        linear-gradient(rgba(247,243,234,.84), rgba(247,243,234,.96)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop") center/cover;
+    }
+
+    .join p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: var(--forest);
+      color: white;
+      padding: 2rem 8vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: Arial, sans-serif;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .75rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 1rem .5rem 0;
+      }
+
+      .intro,
+      .poster,
+      .simple-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img,
+      .gallery img:first-child {
+        height: 260px;
+        grid-row: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <img src="images/logo.png" alt="Upstate SC Young Birders logo">
+  </a>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#meeting">Meeting</a>
+    <a href="#photos">Photos</a>
+    <a href="contact.html">Contact</a>
+    <a href="join.html">Join</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <h1>Upstate SC Young Birders</h1>
+    <p>A local birding club for young people in Upstate South Carolina.</p>
+    <a class="button" href="join.html">Join the Club</a>
+  </div>
+</header>
+
+<section class="intro" id="about">
+  <div>
+    <p class="small-label">About</p>
+    <h2>Bird walks, local parks, and learning together.</h2>
+    <p>
+      We meet monthly for birding, photography, and conservation focused outings.
+      Beginners are welcome.
+    </p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=1200&auto=format&fit=crop" alt="Bird on branch">
+</section>
+
+<section class="soft">
+  <p class="small-label">What We Do</p>
+  <h2>Simple ways to get outside.</h2>
+
+  <div class="simple-grid">
+    <div class="note">
+      <h3>Bird Walks</h3>
+      <p>Monthly outings at local trails, gardens, parks, and wetlands.</p>
+    </div>
+
+    <div class="note">
+      <h3>Photography</h3>
+      <p>Space to practice bird and nature photography.</p>
+    </div>
+
+    <div class="note">
+      <h3>Conservation</h3>
+      <p>Learning how to care for birds and local habitats.</p>
+    </div>
+  </div>
+</section>
+
+<section class="poster" id="meeting">
+  <div>
+    <p class="small-label">Next Meeting</p>
+    <h2>May bird walk</h2>
+    <p>
+      May 20 at Clemson Botanical Garden.
+      Bird walk with the Winged Wednesday group.
+      Registration required by May 13.
+    </p>
+    <a class="button" href="contact.html">Email the Club</a>
+  </div>
+
+  <img src="images/may-poster.jpg" alt="May meeting poster">
+</section>
+
+<section id="photos">
+  <p class="small-label">Photos</p>
+  <h2>Seen around the Upstate.</h2>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop" alt="Wetland">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop" alt="Forest">
+    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop" alt="Morning woods">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Quiet lake">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Mountain lake">
+  </div>
+</section>
+
+<section class="join">
+  <p class="small-label">Join</p>
+  <h2>New birders are welcome.</h2>
+  <p>
+    Open to ages 10 to 18. Participants under 14 must be accompanied by an adult.
+  </p>
+  <a class="button" href="join.html">Interest Form</a>
+</section>
+
+<footer>
+  <p>© 2026 Upstate SC Young Birders Club</p>
+  <p>upstatesc.youngbirders@gmail.com</p>
+</footer>
+
+</body>
+</html>
