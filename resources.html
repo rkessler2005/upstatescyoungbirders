@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Resources | Upstate SC Young Birders</title>
+
+<style>
+
+:root{
+  --forest:#254734;
+  --moss:#6f8f72;
+  --sage:#dfe8d8;
+  --cream:#f7f3ea;
+  --teal:#5d8fb3;
+  --ink:#1f2a22;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia, serif;
+  line-height:1.7;
+}
+
+nav{
+  position:sticky;
+  top:0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:.8rem 6vw;
+
+  background:rgba(247,243,234,.92);
+
+  backdrop-filter:blur(8px);
+
+  border-bottom:1px solid rgba(37,71,52,.08);
+
+  z-index:20;
+}
+
+.logo img{
+  width:48px;
+}
+
+nav ul{
+  display:flex;
+  gap:1.5rem;
+  list-style:none;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--forest);
+
+  font-family:Arial, sans-serif;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  font-size:.75rem;
+}
+
+header{
+  min-height:55vh;
+
+  background:
+    linear-gradient(rgba(247,243,234,.72), rgba(247,243,234,.92)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000&auto=format&fit=crop")
+    center/cover;
+
+  display:flex;
+  align-items:end;
+
+  padding:6rem 8vw 4rem;
+}
+
+.hero{
+  max-width:700px;
+}
+
+.small{
+  color:var(--teal);
+
+  text-transform:uppercase;
+
+  letter-spacing:.14em;
+
+  font-family:Arial, sans-serif;
+
+  font-size:.72rem;
+
+  margin-bottom:1rem;
+}
+
+h1{
+  color:var(--forest);
+
+  font-size:clamp(2.3rem,5vw,4rem);
+
+  font-weight:400;
+
+  line-height:1.05;
+
+  margin-bottom:1rem;
+}
+
+.hero p{
+  max-width:620px;
+}
+
+main{
+  padding:4rem 8vw 5rem;
+}
+
+.resources{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.2rem;
+}
+
+.card{
+  background:rgba(255,255,255,.72);
+
+  backdrop-filter:blur(6px);
+
+  padding:1.6rem;
+
+  border-radius:1rem;
+
+  border:1px solid rgba(37,71,52,.08);
+}
+
+.card h2{
+  color:var(--forest);
+
+  font-size:1.25rem;
+
+  font-weight:400;
+
+  margin-bottom:.8rem;
+}
+
+.card p{
+  margin-bottom:1rem;
+}
+
+.button{
+  display:inline-block;
+
+  background:rgba(93,143,179,.08);
+
+  color:var(--forest);
+
+  border:1px solid rgba(93,143,179,.38);
+
+  padding:.72rem 1rem;
+
+  border-radius:999px;
+
+  text-decoration:none;
+
+  font-family:Arial, sans-serif;
+
+  font-size:.72rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+}
+
+footer{
+  background:var(--forest);
+
+  color:white;
+
+  padding:2rem 8vw;
+
+  font-family:Arial, sans-serif;
+
+  font-size:.85rem;
+}
+
+@media(max-width:700px){
+
+  nav{
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <a class="logo" href="index.html">
+    <img src="logo.png">
+  </a>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+<header>
+
+  <div class="hero">
+
+    <p class="small">Resources</p>
+
+    <h1>Helpful tools and organizations.</h1>
+
+    <p>
+      A collection of birding apps, citizen science projects,
+      conservation groups, and clubs useful for beginners and experienced birders alike.
+    </p>
+
+  </div>
+
+</header>
+
+<main>
+
+<div class="resources">
+
+<div class="card">
+<h2>NestWatch</h2>
+<p>Monitor bird nests and contribute to citizen science while watching chicks grow.</p>
+<a class="button" href="https://nestwatch.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>eBird</h2>
+<p>Track bird sightings and see what species are being found near you.</p>
+<a class="button" href="https://ebird.org/home" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>BirdCast</h2>
+<p>Track migration and see what birds may be moving through your area.</p>
+<a class="button" href="https://birdcast.info/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>Merlin Bird ID</h2>
+<p>Identify birds by sound or appearance and learn local species.</p>
+<a class="button" href="https://merlin.allaboutbirds.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>Greenville County Bird Club</h2>
+<p>Experienced local birders offering walks and outings around Greenville.</p>
+<a class="button" href="https://www.gcbirdclub.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>OspreyWatch</h2>
+<p>Report osprey nests and support osprey conservation efforts.</p>
+<a class="button" href="https://www.osprey-watch.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>IBP Banding Stations</h2>
+<p>Explore active and inactive bird banding stations and research projects.</p>
+<a class="button" href="https://birdnet.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>South Carolina Bluebird Society</h2>
+<p>Learn about bluebirds, nest boxes, and habitat conservation.</p>
+<a class="button" href="https://southcarolinabluebirds.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>American Ornithological Society</h2>
+<p>Professional ornithology resources, publications, and bird research tools.</p>
+<a class="button" href="https://americanornithology.org/" target="_blank">Visit</a>
+</div>
+
+<div class="card">
+<h2>Carolina Bird Club</h2>
+<p>A community of birders across North and South Carolina.</p>
+<a class="button" href="https://www.carolinabirdclub.org/" target="_blank">Visit</a>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<p>© 2026 Upstate SC Young Birders Club</p>
+</footer>
+
+</body>
+</html>
